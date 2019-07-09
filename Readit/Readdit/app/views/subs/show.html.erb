@@ -1,0 +1,21 @@
+<h2>TheShow</h2>
+<a href="<%= subs_url %>">Something</a>
+<a href="<%= edit_sub_url(@sub) %>">Clean up</a>
+<%= @sub.title %>
+<%= @sub.description %>
+<%= @sub.user.username %>
+
+<h3>Post It</h3>
+
+<form action="<%= posts_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="post[sub_id]" value="<%= @sub.id %>">
+
+<label>
+  Title
+  <input type="text" name="post[title]" value="">
+</label>
+  
+  <input type="submit" value="Post it">
+</form>
+
